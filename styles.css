@@ -1,6 +1,6 @@
 /* ==========================================================================
    TAZIK29 Bio & Community Hub - Google Material Design 3
-   Includes: Dedicated Popout Stream Chat Modal Window & Controls
+   Includes: Real YouTube Live Chat Embedded Directly Inside Right Card Box
    ========================================================================== */
 
 :root {
@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 .stat-label { font-size: 0.72rem; color: var(--md-sys-color-on-surface-variant); }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-/* LIVE STREAM & CHAT PROMPT CARD */
+/* LIVE STREAM & REAL EMBEDDED CHAT CARD */
 .live-section { padding-top: 1rem; padding-bottom: 2rem; }
 .live-card { padding: 1.8rem; }
 .live-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.75rem; }
@@ -178,75 +178,48 @@ a { color: inherit; text-decoration: none; }
 .live-title-badge { font-size: 0.95rem; font-weight: 700; color: var(--md-sys-color-on-surface); }
 .live-header-actions { display: flex; gap: 0.6rem; }
 
-.stream-chat-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.2rem; }
+.stream-chat-grid { display: grid; grid-template-columns: 1fr 340px; gap: 1.2rem; }
 .stream-player-box { display: flex; flex-direction: column; gap: 0.8rem; }
 .direct-stream-container { position: relative; width: 100%; padding-top: 56.25%; border-radius: var(--md-shape-corner-large); overflow: hidden; background: #000; border: 1px solid var(--md-sys-color-outline-variant); box-shadow: var(--md-elevation-2); }
 .direct-stream-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .stream-meta h3 { font-size: 1.15rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem; }
 .stream-meta p { font-size: 0.85rem; color: var(--md-sys-color-on-surface-variant); }
 
-.chat-card-prompt {
-    background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-large); display: flex; flex-direction: column; height: auto; min-height: 380px; overflow: hidden;
-}
-.chat-header { padding: 0.85rem 1.1rem; background: var(--md-sys-color-surface-container-high); border-bottom: 1px solid var(--md-sys-color-outline-variant); display: flex; align-items: center; justify-content: space-between; }
-.chat-title-wrap { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--md-sys-color-primary); }
-.chat-online-badge { font-size: 0.78rem; font-weight: 700; color: var(--md-sys-color-on-surface-variant); }
-
-.chat-prompt-body {
-    padding: 1.8rem 1.2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.8rem; flex-grow: 1;
-}
-.chat-icon-pulse {
-    width: 60px; height: 60px; border-radius: 50%; background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
-    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
-}
-.chat-prompt-body h4 { font-size: 1.1rem; color: var(--md-sys-color-on-surface); }
-.chat-prompt-body p { font-size: 0.84rem; color: var(--md-sys-color-on-surface-variant); line-height: 1.45; }
-
-
-/* ================= FLOATING MATERIAL 3 MODAL DIALOG ================= */
-.chat-modal-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;
-    background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(10px);
-    display: none; align-items: center; justify-content: center; padding: 1rem;
-    animation: fadeIn 0.25s var(--md-motion-easing-standard) forwards;
+/* EMBEDDED CHAT BOX IN RIGHT CARD */
+.stream-chat-box {
+    background: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large);
+    display: flex; flex-direction: column; height: 440px; overflow: hidden;
+    box-shadow: var(--md-elevation-1);
 }
 
-.chat-modal-overlay.active { display: flex; }
-
-.chat-modal-window {
-    width: 100%; max-width: 440px; height: 680px; max-height: 90vh;
-    background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large); box-shadow: var(--md-elevation-4);
-    display: flex; flex-direction: column; overflow: hidden;
-    animation: scaleUp 0.3s var(--md-motion-easing-standard) forwards;
-}
-
-.chat-modal-header {
-    padding: 0.85rem 1.2rem; background: var(--md-sys-color-surface-container-high);
+.chat-header {
+    padding: 0.85rem 1.1rem; background: var(--md-sys-color-surface-container-high);
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
     display: flex; align-items: center; justify-content: space-between;
 }
 
-.chat-modal-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.88rem; color: var(--md-sys-color-on-surface); }
+.chat-title-wrap {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-weight: 700; font-size: 0.85rem; color: var(--md-sys-color-primary);
+}
 
-.chat-modal-controls { display: flex; gap: 0.4rem; }
-
-.btn-icon {
-    width: 32px; height: 32px; border-radius: 50%; background: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-on-surface);
-    display: flex; align-items: center; justify-content: center; font-size: 0.85rem; cursor: pointer;
+.btn-icon-sm {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-on-surface-variant);
+    display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; cursor: pointer;
     transition: all 0.2s ease;
 }
-.btn-icon:hover { background: var(--md-sys-color-surface-container-highest); color: var(--md-sys-color-primary); }
-.btn-icon.close-btn:hover { background: rgba(255, 82, 82, 0.2); color: var(--md-sys-color-error); }
+.btn-icon-sm:hover { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-primary); }
 
-.chat-modal-body { flex-grow: 1; width: 100%; height: 100%; background: #000; }
+.chat-frame-container {
+    flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; height: 100%; position: relative;
+}
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes scaleUp { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
-
+.yt-chat-pure-iframe {
+    width: 100%; height: 100%; border: none; background: var(--md-sys-color-surface); flex-grow: 1;
+}
 
 /* SOCIALS & VIDEOS & SERVERS */
 .socials-grid.compact-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }

@@ -1,6 +1,6 @@
 /* ==========================================================================
    TAZIK29 Website Dynamic JavaScript
-   Includes: Popout Stream Chat Modal Window, Automatic Live Title Polling
+   Includes: Embedded YouTube Live Chat Iframe, Automatic Live Title Polling
    ========================================================================== */
 
 const CHANNEL_LIVE_URL = 'https://www.youtube.com/@tazik29/live';
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoFilters();
     initSmoothScroll();
     initMobileMenu();
-    initYouTubeModalChatDomain();
+    initYouTubeCardLiveChatDomain();
     
     // Initial fetch of real live stream status & title
     fetchRealYouTubeLiveStreamData();
@@ -19,30 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         fetchRealYouTubeLiveStreamData(true);
     }, 30000);
-
-    // ESC key closes modal
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeChatModal();
-        }
-    });
-
-    console.log("%cλ Popout Stream Chat Modal System Ready!", "color: #ffb74d; font-size: 16px; font-weight: bold;");
 });
 
-/* ================= CHAT MODAL DIALOG & POPOUT CONTROLS ================= */
-function openChatModal() {
-    const modal = document.getElementById('chat-modal');
-    if (modal) {
-        modal.classList.add('active');
-        showToast('<i class="fa-solid fa-comments"></i> Открыто отдельное окно чата стрима');
-    }
-}
-
-function closeChatModal() {
-    const modal = document.getElementById('chat-modal');
-    if (modal) {
-        modal.classList.remove('active');
+/* ================= YOUTUBE LIVE CHAT DOMAIN INJECTOR FOR CARD IFRAME ================= */
+function initYouTubeCardLiveChatDomain() {
+    const cardIframe = document.getElementById('card-yt-live-chat');
+    if (cardIframe) {
+        const domain = window.location.hostname || 'localhost';
+        cardIframe.src = `https://www.youtube.com/live_chat?v=jvNtjL9qEAc&embed_domain=${domain}`;
     }
 }
 
@@ -53,14 +37,6 @@ function popoutWindowChat() {
     // Open dedicated standalone popup window
     window.open(chatUrl, 'TAZIK29LiveChat', 'width=420,height=680,resizable=yes,scrollbars=yes,status=no,toolbar=no');
     showToast('<i class="fa-solid fa-arrow-up-right-from-square"></i> Чат открыт в отдельном окне браузера!');
-}
-
-function initYouTubeModalChatDomain() {
-    const modalIframe = document.getElementById('modal-yt-live-chat');
-    if (modalIframe) {
-        const domain = window.location.hostname || 'localhost';
-        modalIframe.src = `https://www.youtube.com/live_chat?v=jvNtjL9qEAc&embed_domain=${domain}`;
-    }
 }
 
 /* ================= AUTOMATIC REAL YOUTUBE LIVE TITLE & STATUS FETCHER ================= */
@@ -103,7 +79,7 @@ async function fetchRealYouTubeLiveStreamData(isSilent = false) {
                 if (headerStatusDot) headerStatusDot.className = "pulse-dot-red";
 
                 if (streamDesc) {
-                    streamDesc.textContent = `Прямой эфир "${realTitle}" идет прямо сейчас! Нажмите «Чат Со Стрима» для вывода окна чата.`;
+                    streamDesc.textContent = `Прямой эфир "${realTitle}" идет прямо сейчас! Настоящий чат YouTube встроен справа.`;
                 }
 
                 if (!isSilent) {

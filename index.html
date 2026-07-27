@@ -127,9 +127,9 @@
 
                             <!-- CTA Buttons -->
                             <div class="hero-buttons">
-                                <button onclick="openChatModal()" class="btn btn-primary btn-glow">
-                                    <i class="fa-solid fa-comments"></i> Чат Со Стрима
-                                </button>
+                                <a href="#live-stream" class="btn btn-primary btn-glow">
+                                    <i class="fa-solid fa-comments"></i> Перейти к Эфиру & Чату
+                                </a>
                                 <a href="https://t.me/tazik29" target="_blank" class="btn btn-tg">
                                     <i class="fa-brands fa-telegram"></i> Telegram Канал
                                 </a>
@@ -144,7 +144,7 @@
         </section>
 
 
-        <!-- ================= 2. LIVE STREAM SECTION ================= -->
+        <!-- ================= 2. LIVE STREAM + DIRECT YOUTUBE LIVE CHAT IN CARD ================= -->
         <section id="live-stream" class="section live-section">
             <div class="container">
                 <div class="live-card glass-panel" id="main-live-card">
@@ -154,16 +154,16 @@
                             <span class="live-title-badge" id="header-status-badge">⚫ СТАТУС: ОФФЛАЙН</span>
                         </div>
                         <div class="live-header-actions">
-                            <button onclick="openChatModal()" class="btn btn-primary btn-sm btn-glow">
-                                <i class="fa-solid fa-comments"></i> Чат Со Стрима
-                            </button>
-                            <a href="https://www.youtube.com/@tazik29/live" target="_blank" class="btn btn-secondary btn-sm">
+                            <a href="https://t.me/tazik29" target="_blank" class="btn btn-tg btn-sm">
+                                <i class="fa-brands fa-telegram"></i> Анонсы в Telegram
+                            </a>
+                            <a href="https://www.youtube.com/@tazik29/live" target="_blank" class="btn btn-primary btn-sm btn-glow">
                                 <i class="fa-brands fa-youtube"></i> Эфир на YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Stream + Direct Chat Banner Grid -->
+                    <!-- Stream Player + REAL YOUTUBE LIVE CHAT EMBED INSIDE THE RIGHT CARD -->
                     <div class="stream-chat-grid">
                         
                         <!-- Left: Channel Live Stream Embed Player -->
@@ -181,27 +181,33 @@
                                     <i class="fa-solid fa-circle" id="title-status-icon" style="color: var(--md-sys-color-outline)"></i>
                                     <span id="stream-title-text">Трансляция TAZIK29 (Автор оффлайн)</span>
                                 </h3>
-                                <p class="stream-desc" id="current-stream-desc">Плеер транслирует активный эфир канала @tazik29. Нажми «Чат Со Стрима» для вывода окна чата!</p>
+                                <p class="stream-desc" id="current-stream-desc">Плеер транслирует активный эфир канала @tazik29. Встроен реальный чат YouTube справа!</p>
                             </div>
                         </div>
 
-                        <!-- Right: Material 3 Open Chat Modal Card (Button 'Открыть окно чата' removed as requested) -->
-                        <div class="stream-chat-box chat-card-prompt">
+                        <!-- Right: REAL YOUTUBE LIVE CHAT EMBEDDED DIRECTLY IN THE CARD -->
+                        <div class="stream-chat-box">
                             <div class="chat-header">
                                 <div class="chat-title-wrap">
                                     <i class="fa-brands fa-youtube" style="color: #ff5252"></i>
                                     <span>ЧАТ СТРИМА</span>
                                 </div>
-                                <span class="chat-online-badge">YOUTUBE CHAT</span>
+                                <div class="chat-header-actions">
+                                    <button onclick="popoutWindowChat()" class="btn-icon-sm" title="Открыть в отдельном окне">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </button>
+                                </div>
                             </div>
 
-                            <div class="chat-prompt-body">
-                                <div class="chat-icon-pulse"><i class="fa-solid fa-comments"></i></div>
-                                <h4>Чат Трансляции</h4>
-                                <p>Нажмите «Чат Со Стрима» выше для открывания всплывающего окна чата или перейдите в отдельное окно браузера.</p>
-                                <button onclick="popoutWindowChat()" class="btn btn-secondary btn-full">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Чат в новом окне браузера
-                                </button>
+                            <!-- REAL YOUTUBE CHAT IFRAME DIRECTLY IN THIS BOX (NO BUTTONS/TEXT INSIDE) -->
+                            <div class="chat-frame-container">
+                                <iframe id="card-yt-live-chat" 
+                                        src="https://www.youtube.com/live_chat?v=jvNtjL9qEAc&embed_domain=localhost" 
+                                        title="Реальный Чат YouTube Стрима"
+                                        width="100%" 
+                                        height="100%" 
+                                        frameborder="0"
+                                        class="yt-chat-pure-iframe"></iframe>
                             </div>
                         </div>
 
@@ -510,34 +516,6 @@
         </section>
 
     </main>
-
-    <!-- ================= FLOATING STREAM CHAT MODAL DIALOG ================= -->
-    <div id="chat-modal" class="chat-modal-overlay">
-        <div class="chat-modal-window">
-            <div class="chat-modal-header">
-                <div class="chat-modal-title">
-                    <i class="fa-brands fa-youtube" style="color: #ff5252"></i>
-                    <span>Чат Стрима TAZIK29 (YouTube Live Chat)</span>
-                </div>
-                <div class="chat-modal-controls">
-                    <button class="btn-icon" onclick="popoutWindowChat()" title="Открыть в отдельном окне браузера">
-                        <i class="fa-solid fa-up-right-from-square"></i>
-                    </button>
-                    <button class="btn-icon close-btn" onclick="closeChatModal()" title="Закрыть окно">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="chat-modal-body">
-                <iframe id="modal-yt-live-chat" 
-                        src="https://www.youtube.com/live_chat?v=jvNtjL9qEAc&embed_domain=localhost" 
-                        title="Чат Стрима TAZIK29" 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
