@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAZIK29 (тазик29) | Био-сайт, Стримы, Чат и Сервера</title>
+    <meta name="description" content="Страница TAZIK29 (тазик29) - блогера и стримера по Half-Life, Portal, S.T.A.L.K.E.R. Соцсети, чат стрима, видео и игровые сервера.">
+    <meta name="keywords" content="tazik29, тазик29, half-life, half-life 2, portal, sven co-op, synergy, black mesa, minecraft project t29, сервера tazik29, youtube tazik29">
+    <meta name="theme-color" content="#ffb74d">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="TAZIK29 | Биография, Стримы, Чат & Сервера">
+    <meta property="og:description" content="Главный хаб блогера TAZIK29. Чат стрима, реальные видео и игровые сервера!">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas Particles -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Toast Notification Box -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero-bio" class="nav-logo">
+                <span class="lambda-icon">λ</span>
+                <span class="logo-text">TAZIK<span class="accent-orange">29</span></span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#hero-bio" class="nav-link active"><i class="fa-solid fa-user-astronaut"></i> Био</a>
+                <a href="#live-stream" class="nav-link nav-live-link"><i class="fa-solid fa-tower-broadcast"></i> Эфир & Чат</a>
+                <a href="#socials" class="nav-link"><i class="fa-solid fa-share-nodes"></i> Соцсети</a>
+                <a href="#videos" class="nav-link"><i class="fa-solid fa-play"></i> Видео</a>
+                <a href="#servers" class="nav-link"><i class="fa-solid fa-server"></i> Сервера</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://www.youtube.com/@tazik29?sub_confirmation=1" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-youtube"></i> Подписаться
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Открыть меню">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- ================= 1. BIOGRAPHY (TOP HERO) SECTION ================= -->
+        <section id="hero-bio" class="section hero-section">
+            <div class="container">
+                <div class="hero-card glass-panel">
+                    <div class="hero-badge-live offline-pill" id="bio-stream-status-pill">
+                        <span class="pulse-dot-offline" id="bio-pulse-dot"></span>
+                        <span class="live-text" id="bio-status-text">⚫ СТАТУС: ОФФЛАЙН</span>
+                    </div>
+
+                    <div class="hero-grid">
+                        <!-- Left Avatar Column -->
+                        <div class="hero-avatar-wrapper">
+                            <div class="avatar-ring">
+                                <div class="avatar-inner">
+                                    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lND8_70DrBfbt4-cPiBy5EOBk8jAaywkDxd8GeT1NgGIY=s160-c-k-c0x00ffffff-no-rj" alt="TAZIK29 Аватарка" class="avatar-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Info Column -->
+                        <div class="hero-info">
+                            <div class="hero-header">
+                                <h1 class="hero-title">
+                                    TAZIK<span class="accent-orange">29</span>
+                                </h1>
+                                <p class="hero-subtext">Дима • Видеомейкер и Стример</p>
+                            </div>
+
+                            <div class="bio-box">
+                                <h2 class="bio-heading"><i class="fa-solid fa-terminal"></i> Биография и Деятельность</h2>
+                                <p class="bio-paragraph">
+                                    <strong>TAZIK29 (Дима)</strong> — русскоязычный ютубер и стример, создающий ролики по играм <em>Half-Life, Portal, S.T.A.L.K.E.R.</em> и проектам на движке Source.
+                                </p>
+                                <p class="bio-paragraph">
+                                    Дима проводит прямые трансляции, кооперативные ивенты на своих серверах (Sven Co-op, Synergy, Garry's Mod, L4D2, TF2, Minecraft, DoD:S, Roblox) и общается со своими зрителями в чате!
+                                </p>
+                            </div>
+
+                            <!-- Hero Stats Grid -->
+                            <div class="hero-stats hero-stats-3">
+                                <div class="stat-card">
+                                    <div class="stat-icon"><i class="fa-brands fa-youtube"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">77.5 тыс.</span>
+                                        <span class="stat-label">Подписчиков на YouTube</span>
+                                    </div>
+                                </div>
+
+                                <div class="stat-card">
+                                    <div class="stat-icon"><i class="fa-solid fa-video"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">200+</span>
+                                        <span class="stat-label">Видео и Стримов</span>
+                                    </div>
+                                </div>
+
+                                <div class="stat-card">
+                                    <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">9</span>
+                                        <span class="stat-label">Игровых Серверов</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA Buttons -->
+                            <div class="hero-buttons">
+                                <button onclick="openChatModal()" class="btn btn-primary btn-glow">
+                                    <i class="fa-solid fa-comments"></i> Чат Со Стрима
+                                </button>
+                                <a href="https://t.me/tazik29" target="_blank" class="btn btn-tg">
+                                    <i class="fa-brands fa-telegram"></i> Telegram Канал
+                                </a>
+                                <a href="#servers" class="btn btn-secondary">
+                                    <i class="fa-solid fa-server"></i> Сервера Игр
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 2. LIVE STREAM SECTION ================= -->
+        <section id="live-stream" class="section live-section">
+            <div class="container">
+                <div class="live-card glass-panel" id="main-live-card">
+                    <div class="live-card-header">
+                        <div class="live-indicator-wrap">
+                            <span class="pulse-dot-offline" id="header-status-dot"></span>
+                            <span class="live-title-badge" id="header-status-badge">⚫ СТАТУС: ОФФЛАЙН</span>
+                        </div>
+                        <div class="live-header-actions">
+                            <button onclick="openChatModal()" class="btn btn-primary btn-sm btn-glow">
+                                <i class="fa-solid fa-comments"></i> Чат Со Стрима
+                            </button>
+                            <a href="https://www.youtube.com/@tazik29/live" target="_blank" class="btn btn-secondary btn-sm">
+                                <i class="fa-brands fa-youtube"></i> Эфир на YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stream + Direct Chat Banner Grid -->
+                    <div class="stream-chat-grid">
+                        
+                        <!-- Left: Channel Live Stream Embed Player -->
+                        <div class="stream-player-box">
+                            <div class="direct-stream-container">
+                                <iframe id="youtube-channel-live" 
+                                        src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCG71N-E-T1_2G2L9l5k2yNQ&autoplay=1&mute=0" 
+                                        title="Официальный Прямой Эфир TAZIK29" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen 
+                                        class="direct-stream-iframe"></iframe>
+                            </div>
+                            <div class="stream-meta">
+                                <h3 class="stream-title">
+                                    <i class="fa-solid fa-circle" id="title-status-icon" style="color: var(--md-sys-color-outline)"></i>
+                                    <span id="stream-title-text">Трансляция TAZIK29 (Автор оффлайн)</span>
+                                </h3>
+                                <p class="stream-desc" id="current-stream-desc">Плеер транслирует активный эфир канала @tazik29. Нажми «Чат Со Стрима» для вывода окна чата!</p>
+                            </div>
+                        </div>
+
+                        <!-- Right: Material 3 Open Chat Modal Card (Button 'Открыть окно чата' removed as requested) -->
+                        <div class="stream-chat-box chat-card-prompt">
+                            <div class="chat-header">
+                                <div class="chat-title-wrap">
+                                    <i class="fa-brands fa-youtube" style="color: #ff5252"></i>
+                                    <span>ЧАТ СТРИМА</span>
+                                </div>
+                                <span class="chat-online-badge">YOUTUBE CHAT</span>
+                            </div>
+
+                            <div class="chat-prompt-body">
+                                <div class="chat-icon-pulse"><i class="fa-solid fa-comments"></i></div>
+                                <h4>Чат Трансляции</h4>
+                                <p>Нажмите «Чат Со Стрима» выше для открывания всплывающего окна чата или перейдите в отдельное окно браузера.</p>
+                                <button onclick="popoutWindowChat()" class="btn btn-secondary btn-full">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Чат в новом окне браузера
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 3. ALL SOCIAL MEDIA SECTION ================= -->
+        <section id="socials" class="section socials-section">
+            <div class="container">
+                <div class="section-title-wrap compact-title">
+                    <span class="section-badge"><i class="fa-solid fa-share-nodes"></i> СОЦСЕТИ И СВЯЗЬ</span>
+                    <h2 class="section-title">Все Соцсети TAZIK29</h2>
+                    <p class="section-desc">Официальные страницы и сообщества автора</p>
+                </div>
+
+                <div class="socials-grid compact-grid-5">
+                    <!-- 1. YouTube Main -->
+                    <a href="https://www.youtube.com/@tazik29" target="_blank" class="social-card youtube-card">
+                        <div class="social-icon-box"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="social-details">
+                            <h3>TAZIK29 (Основной)</h3>
+                            <p>Главный канал (77.5 тыс. подписчиков).</p>
+                            <span class="social-link-text">youtube.com/@tazik29 <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- 2. YouTube 2 -->
+                    <a href="https://www.youtube.com/@tazik2929" target="_blank" class="social-card youtube2-card">
+                        <div class="social-icon-box"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="social-details">
+                            <h3>TAZIK29 2 (Второй)</h3>
+                            <p>Записи стримов и лайв ролики.</p>
+                            <span class="social-link-text">youtube.com/@tazik2929 <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- 3. Telegram Channel -->
+                    <a href="https://t.me/tazik29" target="_blank" class="social-card telegram-card">
+                        <div class="social-icon-box"><i class="fa-brands fa-telegram"></i></div>
+                        <div class="social-details">
+                            <h3>Telegram Канал</h3>
+                            <p>Новости и анонсы стримов.</p>
+                            <span class="social-link-text">t.me/tazik29 <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- 4. VK Group -->
+                    <a href="https://vk.com/tazik29" target="_blank" class="social-card vk-card">
+                        <div class="social-icon-box"><i class="fa-brands fa-vk"></i></div>
+                        <div class="social-details">
+                            <h3>Группа ВКонтакте</h3>
+                            <p>Сообщество VK для подписчиков.</p>
+                            <span class="social-link-text">vk.com/tazik29 <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- 5. Steam Group -->
+                    <a href="https://steamcommunity.com/groups/tazik29" target="_blank" class="social-card steam-card">
+                        <div class="social-icon-box"><i class="fa-brands fa-steam"></i></div>
+                        <div class="social-details">
+                            <h3>Steam Группа</h3>
+                            <p>Сообщество игроков в Steam.</p>
+                            <span class="social-link-text">Steam Community <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 4. VIDEOS SECTION ================= -->
+        <section id="videos" class="section videos-section">
+            <div class="container">
+                <div class="section-title-wrap compact-title">
+                    <span class="section-badge"><i class="fa-solid fa-film"></i> ВИДЕО</span>
+                    <h2 class="section-title">Реальные Видео Канала</h2>
+                    <p class="section-desc">Нажми на обложку любого ролика для просмотра!</p>
+                </div>
+
+                <!-- Video Filter Tabs -->
+                <div class="video-tabs compact-tabs">
+                    <button class="tab-btn active" data-filter="all">Все</button>
+                    <button class="tab-btn" data-filter="hl2">Half-Life 2</button>
+                    <button class="tab-btn" data-filter="portal">Portal</button>
+                    <button class="tab-btn" data-filter="streams">Плейлист</button>
+                </div>
+
+                <!-- Video Grid -->
+                <div class="video-grid compact-video-grid">
+                    
+                    <!-- Video Card 1: Half Life 2 Bugs -->
+                    <div class="video-card glass-panel" data-category="hl2">
+                        <a href="https://www.youtube.com/watch?v=jvNtjL9qEAc" target="_blank" class="video-thumb-container">
+                            <img src="https://img.youtube.com/vi/jvNtjL9qEAc/hqdefault.jpg" alt="128 ФАКТОВ и БАГОВ о ВЕРТОЛЁТЕ в Half-Life 2" class="video-thumb-img">
+                            <div class="thumb-play-overlay">
+                                <div class="play-icon-glow"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                        </a>
+                        <div class="video-info compact-info">
+                            <span class="video-tag tag-orange"><i class="fa-solid fa-radiation"></i> Half-Life 2</span>
+                            <h3 class="video-title">128 ФАКТОВ и БАГОВ о ВЕРТОЛЁТЕ в Half-Life 2</h3>
+                            <div class="video-footer">
+                                <span class="channel-name"><i class="fa-brands fa-youtube"></i> TAZIK29</span>
+                                <a href="https://www.youtube.com/watch?v=jvNtjL9qEAc" target="_blank" class="watch-link">Смотреть на YT <i class="fa-solid fa-external-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2: Portal Glitches -->
+                    <div class="video-card glass-panel" data-category="portal">
+                        <a href="https://www.youtube.com/watch?v=LHSv8O6Wg4M" target="_blank" class="video-thumb-container">
+                            <img src="https://img.youtube.com/vi/LHSv8O6Wg4M/hqdefault.jpg" alt="БАГИ и СЕКРЕТЫ в Portal 1 & 2" class="video-thumb-img">
+                            <div class="thumb-play-overlay">
+                                <div class="play-icon-glow"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                        </a>
+                        <div class="video-info compact-info">
+                            <span class="video-tag tag-cyan"><i class="fa-solid fa-portal"></i> Portal</span>
+                            <h3 class="video-title">БАГИ и СЕКРЕТЫ в Portal 1 & 2</h3>
+                            <div class="video-footer">
+                                <span class="channel-name"><i class="fa-brands fa-youtube"></i> TAZIK29</span>
+                                <a href="https://www.youtube.com/watch?v=LHSv8O6Wg4M" target="_blank" class="watch-link">Смотреть на YT <i class="fa-solid fa-external-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 3: Half-Life Universe Playlist -->
+                    <div class="video-card glass-panel" data-category="streams">
+                        <a href="https://www.youtube.com/playlist?list=PLyhszG7EZ6R6CyRLBBlSUb-a3SMG_6Nvr" target="_blank" class="video-thumb-container">
+                            <img src="https://img.youtube.com/vi/jvNtjL9qEAc/hqdefault.jpg" alt="Вселенная Half-Life Плейлист" class="video-thumb-img">
+                            <div class="thumb-play-overlay">
+                                <div class="play-icon-glow"><i class="fa-solid fa-list"></i></div>
+                            </div>
+                            <span class="playlist-badge"><i class="fa-solid fa-layer-group"></i> 50+ ролик</span>
+                        </a>
+                        <div class="video-info compact-info">
+                            <span class="video-tag tag-purple"><i class="fa-solid fa-layer-group"></i> Плейлист</span>
+                            <h3 class="video-title">Коллекция Видео Вселенной Half-Life</h3>
+                            <div class="video-footer">
+                                <span class="channel-name"><i class="fa-brands fa-youtube"></i> TAZIK29</span>
+                                <a href="https://www.youtube.com/playlist?list=PLyhszG7EZ6R6CyRLBBlSUb-a3SMG_6Nvr" target="_blank" class="watch-link">Открыть Плейлист <i class="fa-solid fa-external-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 5. REAL SERVERS SECTION ================= -->
+        <section id="servers" class="section servers-section">
+            <div class="container">
+                <div class="section-title-wrap compact-title">
+                    <span class="section-badge"><i class="fa-solid fa-gamepad"></i> 🎮 МОИ СЕРВЕРА 🎮</span>
+                    <h2 class="section-title">Официальные Сервера TAZIK29</h2>
+                    <p class="section-desc">Нажми «Копировать IP» или «Зайти» для быстрого подключения!</p>
+                </div>
+
+                <div class="servers-grid compact-servers-grid">
+                    
+                    <!-- Server 1: Left 4 Dead 2 -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge l4d2-badge"><i class="fa-solid fa-biohazard"></i> Left 4 Dead 2</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Left 4 Dead 2</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">46.174.52.5:27246</code>
+                            <button class="btn-copy" onclick="copyIP('46.174.52.5:27246', 'Left 4 Dead 2')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 2: Synergy -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge hl2-badge"><span class="lambda-sm">λ</span> Synergy</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Synergy</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">46.174.52.201:27016</code>
+                            <button class="btn-copy" onclick="copyIP('46.174.52.201:27016', 'Synergy')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 3: Black Mesa -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge bm-badge"><i class="fa-solid fa-atom"></i> Black Mesa</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Black Mesa</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">46.174.52.201:27015</code>
+                            <button class="btn-copy" onclick="copyIP('46.174.52.201:27015', 'Black Mesa')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 4: Sven Co-op -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge hl1-badge"><i class="fa-solid fa-crosshairs"></i> Sven Co-op</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Sven Co-op</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">62.122.215.96:27015</code>
+                            <button class="btn-copy" onclick="copyIP('62.122.215.96:27015', 'Sven Co-op')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 5: Team Fortress 2 -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge tf2-badge"><i class="fa-solid fa-shield-halved"></i> Team Fortress 2</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Team Fortress 2</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">46.174.48.48:27228</code>
+                            <button class="btn-copy" onclick="copyIP('46.174.48.48:27228', 'Team Fortress 2')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 6: Minecraft 1.16.5 -->
+                    <div class="server-card glass-panel compact-server-card highlight-border">
+                        <div class="server-header">
+                            <div class="server-game-badge mc-badge"><i class="fa-solid fa-cube"></i> Майнкрафт 1.16.5</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Майнкрафт 1.16.5</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">projectT29.exaroton.me</code>
+                            <button class="btn-copy" onclick="copyIP('projectT29.exaroton.me', 'Майнкрафт 1.16.5')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 7: Roblox -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge roblox-badge"><i class="fa-solid fa-cubes"></i> Roblox</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Roblox</h3>
+                        <div class="server-ip-box">
+                            <a href="https://www.roblox.com/share?code=dfbcaede84b2464e87905cac9ed91d7d&type=Server" target="_blank" class="btn btn-primary btn-sm btn-full">
+                                <i class="fa-solid fa-play"></i> Зайти в Roblox
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Server 8: Day of Defeat: Source -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge dod-badge"><i class="fa-solid fa-person-rifle"></i> DoD: Source</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Day of Defeat: Source</h3>
+                        <div class="server-ip-box">
+                            <code class="ip-code">46.174.48.48:27207</code>
+                            <button class="btn-copy" onclick="copyIP('46.174.48.48:27207', 'DoD: Source')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server 9: Garry's Mod -->
+                    <div class="server-card glass-panel compact-server-card">
+                        <div class="server-header">
+                            <div class="server-game-badge gmod-badge"><i class="fa-solid fa-wrench"></i> Garry's Mod</div>
+                            <div class="server-status online"><span class="status-dot"></span> Online</div>
+                        </div>
+                        <h3 class="server-name">Garry's Mod (puk)</h3>
+                        
+                        <div class="server-ip-box">
+                            <code class="ip-code">62.122.213.29:27015</code>
+                            <button class="btn-copy" onclick="copyIP('62.122.213.29:27015', 'Garry\'s Mod')">
+                                <i class="fa-regular fa-copy"></i> Копировать IP
+                            </button>
+                        </div>
+                        
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3190430156" target="_blank" class="gmod-addon-btn">
+                            <i class="fa-brands fa-steam"></i> Аддон-пак в Steam <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FLOATING STREAM CHAT MODAL DIALOG ================= -->
+    <div id="chat-modal" class="chat-modal-overlay">
+        <div class="chat-modal-window">
+            <div class="chat-modal-header">
+                <div class="chat-modal-title">
+                    <i class="fa-brands fa-youtube" style="color: #ff5252"></i>
+                    <span>Чат Стрима TAZIK29 (YouTube Live Chat)</span>
+                </div>
+                <div class="chat-modal-controls">
+                    <button class="btn-icon" onclick="popoutWindowChat()" title="Открыть в отдельном окне браузера">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </button>
+                    <button class="btn-icon close-btn" onclick="closeChatModal()" title="Закрыть окно">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-modal-body">
+                <iframe id="modal-yt-live-chat" 
+                        src="https://www.youtube.com/live_chat?v=jvNtjL9qEAc&embed_domain=localhost" 
+                        title="Чат Стрима TAZIK29" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <span class="lambda-icon">λ</span> TAZIK<span class="accent-orange">29</span>
+                </div>
+                <p class="footer-copy">© 2026 TAZIK29 Bio & Community Fan Page. Все права сохранены.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@tazik29" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a href="https://t.me/tazik29" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                <a href="https://vk.com/tazik29" target="_blank"><i class="fa-brands fa-vk"></i> VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
