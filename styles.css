@@ -1,6 +1,6 @@
 /* ==========================================================================
    TAZIK29 Bio & Community Hub - Google Material Design 3
-   Includes: Real YouTube Live Chat Embedded Directly Inside Right Card Box
+   Theme: Material 3 Surface Dark (#141218) + Lambda Gold (#FFB74D) & Cyan (#4DD0E1)
    ========================================================================== */
 
 :root {
@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 .stat-label { font-size: 0.72rem; color: var(--md-sys-color-on-surface-variant); }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-/* LIVE STREAM & REAL EMBEDDED CHAT CARD */
+/* LIVE STREAM & CHAT PROMPT CARD */
 .live-section { padding-top: 1rem; padding-bottom: 2rem; }
 .live-card { padding: 1.8rem; }
 .live-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.75rem; }
@@ -185,41 +185,24 @@ a { color: inherit; text-decoration: none; }
 .stream-meta h3 { font-size: 1.15rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem; }
 .stream-meta p { font-size: 0.85rem; color: var(--md-sys-color-on-surface-variant); }
 
-/* EMBEDDED CHAT BOX IN RIGHT CARD */
-.stream-chat-box {
-    background: var(--md-sys-color-surface);
-    border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-large);
-    display: flex; flex-direction: column; height: 440px; overflow: hidden;
-    box-shadow: var(--md-elevation-1);
+.chat-card-prompt {
+    background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large); display: flex; flex-direction: column; height: auto; min-height: 380px; overflow: hidden;
 }
+.chat-header { padding: 0.85rem 1.1rem; background: var(--md-sys-color-surface-container-high); border-bottom: 1px solid var(--md-sys-color-outline-variant); display: flex; align-items: center; justify-content: space-between; }
+.chat-title-wrap { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--md-sys-color-primary); }
+.chat-online-badge { font-size: 0.78rem; font-weight: 700; color: var(--md-sys-color-on-surface-variant); }
 
-.chat-header {
-    padding: 0.85rem 1.1rem; background: var(--md-sys-color-surface-container-high);
-    border-bottom: 1px solid var(--md-sys-color-outline-variant);
-    display: flex; align-items: center; justify-content: space-between;
+.chat-prompt-body {
+    padding: 2rem 1.4rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.9rem; flex-grow: 1;
 }
-
-.chat-title-wrap {
-    display: flex; align-items: center; gap: 0.5rem;
-    font-weight: 700; font-size: 0.85rem; color: var(--md-sys-color-primary);
+.chat-icon-pulse {
+    width: 64px; height: 64px; border-radius: 50%; background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.7rem;
+    box-shadow: 0 0 24px rgba(255, 183, 77, 0.25);
 }
-
-.btn-icon-sm {
-    width: 28px; height: 28px; border-radius: 50%; background: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-on-surface-variant);
-    display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; cursor: pointer;
-    transition: all 0.2s ease;
-}
-.btn-icon-sm:hover { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-primary); }
-
-.chat-frame-container {
-    flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; height: 100%; position: relative;
-}
-
-.yt-chat-pure-iframe {
-    width: 100%; height: 100%; border: none; background: var(--md-sys-color-surface); flex-grow: 1;
-}
+.chat-prompt-body h4 { font-size: 1.15rem; color: var(--md-sys-color-on-surface); }
+.chat-prompt-body p { font-size: 0.85rem; color: var(--md-sys-color-on-surface-variant); line-height: 1.5; }
 
 /* SOCIALS & VIDEOS & SERVERS */
 .socials-grid.compact-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
