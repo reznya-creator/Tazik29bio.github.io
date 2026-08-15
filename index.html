@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дмитрий (TAZIK29) | Официальный сайт и Стрим-хаб</title>
+  <meta name="description" content="Официальный сайт Дмитрия (TAZIK29) — ламповые стримы по Half-Life 2, актуальные видео, поддержка автора, реквизиты, ПК и ссылки на соцсети.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon (Obsidian Black Lambda/T29 Emblem) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L3 9.5v13L16 30l13-7.5v-13L16 2z' fill='%23000000' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M11 23l4-10m0 0l3-5m-3 5l6 10' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Liquid Animated Background Blobs & Cursor Glow -->
+  <div class="liquid-background-container">
+    <div class="liquid-blob blob-1"></div>
+    <div class="liquid-blob blob-2"></div>
+    <div class="liquid-blob blob-3"></div>
+    <div class="liquid-blob blob-4"></div>
+  </div>
+  <div id="liquidCursorGlow" class="liquid-cursor-glow"></div>
+
+  <div class="site-wrapper">
+
+    <!-- HEADER / NAVIGATION (LIQUID CAPSULE) -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-brand">
+          <div class="brand-liquid-icon">
+            <svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z" fill="#09090b" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M11 22L15 12M15 12L18.5 7M15 12L21 22" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="brand-text">TAZIK<span class="brand-tag">29</span></span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about" class="nav-link"><i class="far fa-user"></i> О Дмитрии</a>
+          <a href="#stream" class="nav-link">
+            <i class="fas fa-satellite-dish"></i> Стрим
+            <span id="navLiveIndicator" class="nav-badge-live" style="display: none;">
+              <span class="liquid-pulse-dot"></span> LIVE
+            </span>
+          </a>
+          <a href="#servers" class="nav-link"><i class="fas fa-server"></i> Сервера</a>
+          <a href="#donations" class="nav-link"><i class="fas fa-hand-holding-heart"></i> Поддержка</a>
+          <a href="#videos" class="nav-link"><i class="fas fa-play-circle"></i> Видео</a>
+          <a href="#setup" class="nav-link"><i class="fas fa-microchip"></i> ПК и Сетап</a>
+          <a href="#socials" class="nav-link"><i class="fas fa-share-alt"></i> Соцсети</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="https://www.youtube.com/@tazik29?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary">
+            <i class="fab fa-youtube"></i> Подписаться
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO & BIO SECTION -->
+      <section id="about" class="hero-section">
+        <!-- Bio Card (Liquid Glass) -->
+        <div class="hero-bio-card liquid-glass glass-sheen-effect">
+          <div>
+            <div class="bio-profile-header">
+              <div class="liquid-avatar-wrapper">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_lND8_70DrBfbt4-cPiBy5EOBk8jAaywkDxd8GeT1NgGIY=s900-c-k-c0x00ffffff-no-rj" alt="Официальный аватар Дмитрия TAZIK29" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&q=80'">
+                <span class="liquid-avatar-badge">HL2</span>
+              </div>
+              <div class="profile-titles">
+                <h1>Дмитрий (TAZIK29)</h1>
+                <div class="profile-subheading">
+                  <span class="profile-tagline"><i class="fas fa-check-circle"></i> @tazik29 • YouTube Creator</span>
+                  <span class="age-badge">35 лет</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="bio-description">
+              Всем привет! Меня зовут Дмитрий. Мне 35 лет, и я очень люблю игры и ламповое общение со зрителями! Проходим легендарный <strong>HALF-LIFE 2</strong>, Black Mesa, Portal, исследуем секреты, пасхалки и баги игр на движке <strong>Source</strong>, играем в кооперативы и весело проводим время на прямых трансляциях.
+            </p>
+
+            <div class="bio-schedule-box">
+              <i class="far fa-calendar-alt"></i>
+              <div>
+                <div><strong>Расписание стримов:</strong> <span id="streamScheduleBadge">С понедельника по четверг (Четверг — сетевой день)</span></div>
+                <div style="font-size: 0.8rem; color: var(--text-sub); margin-top: 4px;">P.S. Если не стримлю, то заболел или делаю видос, так что ждите =)</div>
+              </div>
+            </div>
+
+            <div class="channel-stats-row">
+              <div class="stat-item-liquid">
+                <div class="stat-val">77.4K+</div>
+                <div class="stat-lbl">Подписчиков</div>
+              </div>
+              <div class="stat-item-liquid">
+                <div class="stat-val">400+</div>
+                <div class="stat-lbl">Видеороликов</div>
+              </div>
+              <div class="stat-item-liquid">
+                <div class="stat-val">12.5M+</div>
+                <div class="stat-lbl">Просмотров</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://www.youtube.com/@tazik29" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary">
+              <i class="fab fa-youtube"></i> Перейти на канал
+            </a>
+            <a href="https://t.me/tazik29" target="_blank" rel="noopener noreferrer" class="btn-liquid-secondary">
+              <i class="fab fa-telegram-plane"></i> Наша Телега (Секретная инфа)
+            </a>
+            <div id="heroSocials" class="hero-socials-quick"></div>
+          </div>
+        </div>
+
+        <!-- Live Stream Tracker Card (Liquid Glass) -->
+        <div id="stream" class="hero-stream-card liquid-glass glass-sheen-effect">
+          <div>
+            <div class="stream-card-header">
+              <div class="stream-tracker-title">
+                <i class="fas fa-broadcast-tower section-icon"></i>
+                <span>СТАТУС ТРАНСЛЯЦИИ</span>
+              </div>
+              <div id="streamStatusBadge" class="status-badge live">
+                <span class="liquid-pulse-dot"></span> В ЭФИРЕ
+              </div>
+            </div>
+
+            <!-- Блок онлайн -->
+            <div id="streamLiveContainer" class="stream-live-content">
+              <div class="stream-tags-list">
+                <span class="stream-tag-pill">#легенда</span>
+                <span class="stream-tag-pill">#HALFLIFE</span>
+                <span class="stream-tag-pill">#ПРОХОЖДЕНИЕ</span>
+              </div>
+              <div id="streamStatusText" style="font-weight: 800; font-size: 0.85rem; margin-bottom: 6px; color: #ffffff; letter-spacing: 0.5px;">
+                ИДЕТ ПРЯМАЯ ТРАНСЛЯЦИЯ
+              </div>
+              <h3 id="streamTitle">🚨🔧ПОПУКИВАЯ ДЕЛАЕМ МОД СДЕЛКА С СУДЬБОЙ 2 / БАРЕБУХО-РЫБАЛКИНА-T1NINE - ПРЕДСТАВЛЯЕТ СТРИМ🔧🚨</h3>
+              
+              <div class="stream-stats-dashboard">
+                <!-- Премиальный счетчик зрителей -->
+                <div class="live-viewers-widget">
+                  <div class="viewers-pulse-radar">
+                    <span class="radar-circle"></span>
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <div class="viewers-counter-details">
+                    <span class="viewers-count-num" id="liveViewersCount">31</span>
+                    <span class="viewers-count-label">зрителя онлайн</span>
+                  </div>
+                </div>
+
+                <!-- Виджет времени начала и таймера эфира -->
+                <div class="stream-time-widget">
+                  <div class="time-row">
+                    <span class="time-label"><i class="far fa-clock"></i> Начало:</span>
+                    <span class="time-val" id="streamStartTime">20:45 МСК</span>
+                  </div>
+                  <div class="time-row">
+                    <span class="time-label"><i class="fas fa-stopwatch"></i> В эфире:</span>
+                    <span class="time-val uptime-glow" id="streamTimer">04:15:12</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px;">
+                <a id="streamWatchBtn" href="https://www.youtube.com/watch?v=EKQWWik0lhY" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+                  <i class="fas fa-play"></i> Смотреть прямой эфир на YouTube
+                </a>
+              </div>
+            </div>
+
+            <!-- Блок офлайн -->
+            <div id="streamOfflineNotice" class="stream-offline-content" style="display: none;">
+              <div class="offline-icon-box">
+                <i class="fas fa-tv"></i>
+              </div>
+              <h4>Стрим сейчас не идет</h4>
+              <p>Подпишитесь на уведомления в нашей Телеге или включите колокольчик на YouTube, чтобы не пропустить следующий эфир!</p>
+            </div>
+          </div>
+
+          <!-- Нижняя панель трекера -->
+          <div class="stream-card-footer">
+            <div style="font-size: 0.82rem; color: var(--text-sub); display: flex; align-items: center; gap: 8px;">
+              <span class="liquid-pulse-dot" style="width: 6px; height: 6px;"></span> Автоматическая синхронизация с YouTube
+            </div>
+            <button id="manualStreamRefresh" class="btn-icon-liquid" style="width: 36px; height: 36px;" title="Обновить статус сейчас">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMUNITY SERVERS SECTION -->
+      <section id="servers" class="servers-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <i class="fas fa-server section-icon"></i>
+            <span>Мои Сервера (TAZIK29 Community)</span>
+          </h2>
+        </div>
+        <div id="serversGrid" class="servers-grid">
+          <!-- Генерируется через app.js -->
+        </div>
+      </section>
+
+      <!-- DONATIONS & SUPPORT SECTION -->
+      <section id="donations" class="donations-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <i class="fas fa-hand-holding-heart section-icon"></i>
+            <span>Поддержка Дмитрия (Донаты & Карты & Крипта)</span>
+          </h2>
+        </div>
+
+        <div class="donations-container-grid">
+          <!-- Сетка сервисов донатов -->
+          <div id="donationsGrid" class="donations-list-grid">
+            <!-- Генерируется через app.js -->
+          </div>
+
+          <!-- Две банковские карты (RUB и USD) -->
+          <div id="bankCardsGrid" class="bank-cards-wrapper">
+            <!-- Генерируется через app.js -->
+          </div>
+        </div>
+
+        <!-- Криптовалютные кошельки -->
+        <div>
+          <div class="crypto-block-title">
+            <i class="fas fa-coins" style="color: #ffffff;"></i>
+            <span>Криптовалютные переводы (Crypto)</span>
+          </div>
+          <div id="cryptoGrid" class="crypto-grid">
+            <!-- Генерируется через app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- LATEST VIDEOS SECTION -->
+      <section id="videos" class="videos-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <i class="fas fa-play-circle section-icon"></i>
+            <span>Актуальные Видеоролики с Канала</span>
+          </h2>
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-category="all">Все</button>
+            <button class="filter-btn" data-category="reviews">Секреты & Пасхалки</button>
+            <button class="filter-btn" data-category="games">Игры & Кооператив</button>
+            <button class="filter-btn" data-category="streams">Записи Стримов</button>
+          </div>
+        </div>
+
+        <div id="videosGrid" class="videos-grid">
+          <!-- Видео генерируются через app.js -->
+        </div>
+      </section>
+
+      <!-- GAMING SETUP & SPECS SECTION -->
+      <section id="setup" class="setup-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <i class="fas fa-microchip section-icon"></i>
+            <span>Конфигурация компьютера Дмитрия</span>
+          </h2>
+        </div>
+        <div id="setupGrid" class="setup-grid">
+          <!-- Генерируется через app.js -->
+        </div>
+      </section>
+
+      <!-- SOCIALS & COMMUNITY SECTION -->
+      <section id="socials" class="socials-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <i class="fas fa-share-alt section-icon"></i>
+            <span>Социальные Сети & Сообщества</span>
+          </h2>
+        </div>
+        <div id="socialsContainer" class="socials-grid">
+          <!-- Соцсети генерируются через app.js -->
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="creator-credit-badge">
+          <i class="fas fa-heart"></i>
+          <span>Сделано с душой от подписчика с ником <span class="credit-highlight">T1NE</span> для <span class="credit-highlight">TAZIK29</span></span>
+        </div>
+        <div class="brand-text">TAZIK<span class="brand-tag">29</span></div>
+        <p>© 2026 Дмитрий (TAZIK29). Все права принадлежат автору канала.</p>
+        <div class="footer-links">
+          <a href="https://www.youtube.com/@tazik29" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
+          <a href="https://t.me/tazik29" target="_blank" rel="noopener noreferrer" class="footer-link">Telegram (Секретная инфа)</a>
+          <a href="https://vk.com/tazogaming" target="_blank" rel="noopener noreferrer" class="footer-link">Группа VK (TazoGaming)</a>
+          <a href="https://discord.gg/GbH3FxQnmJ" target="_blank" rel="noopener noreferrer" class="footer-link">Discord</a>
+          <a href="https://s.team/chat/X0QDtFN0" target="_blank" rel="noopener noreferrer" class="footer-link">Курилка в Steam</a>
+          <a href="https://www.tiktok.com/@tazik29?lang=ru" target="_blank" rel="noopener noreferrer" class="footer-link">TikTok</a>
+          <a href="https://www.instagram.com/tazik29/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+          <a href="https://coub.com/tazik29tazik29" target="_blank" rel="noopener noreferrer" class="footer-link">COUB</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- MODAL VIDEO PLAYER (LIQUID GLASS) -->
+  <div id="videoModal" class="video-modal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" id="modalVideoTitle">Воспроизведение видео</div>
+        <div class="modal-actions">
+          <a id="modalYtLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-icon-liquid" style="width: 38px; height: 38px;" title="Открыть на YouTube">
+            <i class="fab fa-youtube" style="color: #ff3344; font-size: 1.2rem;"></i>
+          </a>
+          <button id="closeModalBtn" class="btn-close-modal" title="Закрыть">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-video-wrapper">
+        <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/stream.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
