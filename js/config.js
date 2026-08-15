@@ -178,14 +178,18 @@ const SITE_CONFIG = {
     }
   ],
 
-  // Все реальные соцсети и сообщества Дмитрия
+  // Все официальные соцсети и сообщества Дмитрия
   socials: [
-    { name: "Telegram", icon: "fab fa-telegram-plane", url: "https://t.me/tazik29", color: "#0088cc", badge: "Секретная инфа & Анонсы" },
-    { name: "Группа VK", icon: "fab fa-vk", url: "https://vk.com/tazogaming", color: "#4C75A3", badge: "TazoGaming сообщество" },
-    { name: "Страничка VK", icon: "fab fa-vk", url: "https://vk.com/tazik29", color: "#2787F5", badge: "Личная страница" },
-    { name: "Беседа в VK", icon: "fas fa-comments", url: "https://vk.me/join/ygEXWZ8GBXlEBUVGz6OVht0vBVNfFE71GKQ=", color: "#5181B8", badge: "Чат подписчиков" },
-    { name: "Discord", icon: "fab fa-discord", url: "https://discord.gg/GbH3FxQnmJ", color: "#5865F2", badge: "Сервер комьюнити" },
-    { name: "Курилка Steam", icon: "fab fa-steam", url: "https://s.team/chat/X0QDtFN0", color: "#171a21", badge: "Чат в Steam" },
+    { name: "Основной YouTube", icon: "fab fa-youtube", url: "https://youtube.com/@tazik29", color: "#FF0000", badge: "Главный канал" },
+    { name: "Второй YouTube", icon: "fab fa-youtube", url: "https://youtube.com/@tazik2929", color: "#FF4D4D", badge: "@tazik2929" },
+    { name: "Телеграм чат", icon: "fab fa-telegram-plane", url: "https://t.me/+FH8pRiy8MZQwZmEy", color: "#0088cc", badge: "Чат & Анонсы" },
+    { name: "Группа ВКонтакте", icon: "fab fa-vk", url: "https://vk.com/tazogaming", color: "#4C75A3", badge: "TazoGaming" },
+    { name: "Профиль ВКонтакте", icon: "fab fa-vk", url: "https://vk.com/tazik29", color: "#2787F5", badge: "Личная страница" },
+    { name: "Дискорд сервер", icon: "fab fa-discord", url: "https://discord.gg/cK7QFynZQ5", color: "#5865F2", badge: "Сервер комьюнити" },
+    { name: "Группа в Стиме", icon: "fab fa-steam", url: "http://steamcommunity.com/groups/tazik29off", color: "#171a21", badge: "tazik29off" },
+    { name: "Стим профиль", icon: "fab fa-steam-symbol", url: "https://steamcommunity.com/id/tazik29/", color: "#1b2838", badge: "tazik29" },
+    { name: "Чат в Стиме", icon: "fas fa-comments", url: "https://s.team/chat/WrzEFnTH", color: "#2a475e", badge: "Курилка Steam" },
+    { name: "Twitch", icon: "fab fa-twitch", url: "http://www.twitch.tv/tazik29", color: "#9146FF", badge: "(в говне)" },
     { name: "TikTok", icon: "fab fa-tiktok", url: "https://www.tiktok.com/@tazik29?lang=ru", color: "#FE2C55", badge: "Короткие клипы" },
     { name: "Instagram", icon: "fab fa-instagram", url: "https://www.instagram.com/tazik29/", color: "#E1306C", badge: "Фото и лайфстайл" },
     { name: "COUB", icon: "fas fa-play", url: "https://coub.com/tazik29tazik29", color: "#2980B9", badge: "Коубы & Мемы" }
@@ -196,8 +200,8 @@ const SITE_CONFIG = {
     { category: "Процессор", icon: "fas fa-microchip", spec: "Intel® Core™ i7-7700 (3.6 GHz)" },
     { category: "Видеокарта", icon: "fas fa-vr-cardboard", spec: "NVIDIA® GeForce® RTX 2080 Ti (11 GB)" },
     { category: "Материнская плата", icon: "fas fa-layer-group", spec: "MSI® B250 Gaming Pro Carbon" },
-    { category: "Оперативная память", icon: "fas fa-memory", spec: "32 GB @Kingston® HyperX® FURY Black (DDR4, 2400 MHz)" },
-    { category: "Корпус", icon: "fas fa-box", spec: "Zalman® Z9 Plus (Black) #легенда" },
+    { category: "Оперативная память", icon: "fas fa-memory", spec: "32 Gb @Kingston® HyperX® FURY Black (DDR4, 8 Gb, 2400 MHz) (x2)" },
+    { category: "Корпус", icon: "fas fa-box", spec: "Zalman® Z9 Plus (Black)" },
     { category: "Операционная система", icon: "fab fa-windows", spec: "Microsoft® Windows® 10 Professional (x64)" }
   ],
 
