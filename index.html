@@ -137,8 +137,13 @@
                 <i class="fas fa-broadcast-tower section-icon"></i>
                 <span>СТАТУС ТРАНСЛЯЦИИ</span>
               </div>
-              <div id="streamStatusBadge" class="status-badge live">
-                <span class="liquid-pulse-dot"></span> В ЭФИРЕ
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <button id="streamAudioAlertToggle" class="btn-sound-alert" title="Звуковое оповещение о старте стрима (нажмите для проверки/включения)">
+                  <i class="fas fa-volume-up"></i>
+                </button>
+                <div id="streamStatusBadge" class="status-badge live">
+                  <span class="liquid-pulse-dot"></span> В ЭФИРЕ
+                </div>
               </div>
             </div>
 

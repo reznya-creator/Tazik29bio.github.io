@@ -1,5 +1,6 @@
 /**
- * stream.js - Автоматическое отслеживание трансляций Дмитрия (@tazik29) и точного времени эфира
+ * stream.js - Автоматическое отслеживание трансляций Дмитрия (@tazik29),
+ * точного времени эфира и звуковое оповещение при старте стрима
  */
 class StreamTracker {
   constructor(config) {
@@ -9,11 +10,15 @@ class StreamTracker {
     this.checkTimer = null;
     this.durationInterval = null;
     this.streamStartTime = Date.now();
+    this.wasOffline = null;
+    this.soundEnabled = localStorage.getItem("tazik29_stream_sound") !== "false";
+    this.audioCtx = null;
   }
 
   init() {
     this.bindDomElements();
     this.setupEventListeners();
+    this.setupSoundControls();
     this.checkStreamStatus();
     
     // Периодическая проверка статуса каждые 45 секунд
@@ -33,6 +38,7 @@ class StreamTracker {
     this.streamOfflineNotice = document.getElementById("streamOfflineNotice");
     this.streamLiveContainer = document.getElementById("streamLiveContainer");
     this.navLiveIndicator = document.getElementById("navLiveIndicator");
+    this.soundToggleBtn = document.getElementById("streamAudioAlertToggle");
   }
 
   setupEventListeners() {
@@ -44,6 +50,100 @@ class StreamTracker {
           setTimeout(() => refreshBtn.classList.remove("fa-spin"), 600);
         });
       });
+    }
+
+    // Инициализация аудио-контекста по первому клику пользователя
+    document.addEventListener("click", () => {
+      this.ensureAudioContext();
+    }, { once: true });
+  }
+
+  setupSoundControls() {
+    if (!this.soundToggleBtn) return;
+
+    this.updateSoundBtnUI();
+
+    this.soundToggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.ensureAudioContext();
+
+      if (this.soundEnabled) {
+        this.soundEnabled = false;
+        localStorage.setItem("tazik29_stream_sound", "false");
+        this.updateSoundBtnUI();
+        if (typeof showToast === "function") showToast("Звук оповещения стрима выключен");
+      } else {
+        this.soundEnabled = true;
+        localStorage.setItem("tazik29_stream_sound", "true");
+        this.updateSoundBtnUI();
+        this.playStreamStartSound();
+        if (typeof showToast === "function") showToast("Звук оповещения включен (тестовый сигнал сыгран)");
+      }
+    });
+  }
+
+  updateSoundBtnUI() {
+    if (!this.soundToggleBtn) return;
+    if (this.soundEnabled) {
+      this.soundToggleBtn.className = "btn-sound-alert";
+      this.soundToggleBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
+      this.soundToggleBtn.title = "Звук оповещения включен (нажмите для выключения)";
+    } else {
+      this.soundToggleBtn.className = "btn-sound-alert muted";
+      this.soundToggleBtn.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+      this.soundToggleBtn.title = "Звук оповещения выключен (нажмите для включения)";
+    }
+  }
+
+  ensureAudioContext() {
+    if (!this.audioCtx) {
+      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtxClass) {
+        this.audioCtx = new AudioCtxClass();
+      }
+    }
+    if (this.audioCtx && this.audioCtx.state === "suspended") {
+      this.audioCtx.resume();
+    }
+  }
+
+  /**
+   * Воспроизведение звука старта стрима (Half-Life / Sci-Fi тритон через Web Audio API)
+   */
+  playStreamStartSound() {
+    if (!this.soundEnabled) return;
+    try {
+      this.ensureAudioContext();
+      if (!this.audioCtx) return;
+
+      const now = this.audioCtx.currentTime;
+
+      // Трезвучие нот: D5 (587Hz) -> A5 (880Hz) -> D6 (1174Hz)
+      const notes = [
+        { freq: 587.33, time: now, dur: 0.12 },
+        { freq: 880.00, time: now + 0.10, dur: 0.14 },
+        { freq: 1174.66, time: now + 0.22, dur: 0.45 }
+      ];
+
+      notes.forEach(note => {
+        const osc = this.audioCtx.createOscillator();
+        const gain = this.audioCtx.createGain();
+
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(note.freq, note.time);
+
+        gain.gain.setValueAtTime(0, note.time);
+        gain.gain.linearRampToValueAtTime(0.18, note.time + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, note.time + note.dur);
+
+        osc.connect(gain);
+        gain.connect(this.audioCtx.destination);
+
+        osc.start(note.time);
+        osc.stop(note.time + note.dur);
+      });
+    } catch (err) {
+      console.warn("Audio playback notice:", err);
     }
   }
 
@@ -83,7 +183,7 @@ class StreamTracker {
         }
       }
     } catch (e) {
-      // Игнорируем сетевые ошибки, переходим к подтвержденным данным
+      // Игнорируем сетевые ошибки
     }
 
     // 2. Fallback на подтвержденный активный стрим из конфигурации
@@ -106,6 +206,16 @@ class StreamTracker {
         embedUrl: demo.streamEmbedUrl
       };
     }
+
+    // Проверка перехода из офлайна в онлайн во время нахождения на сайте
+    if (detectedLive && this.wasOffline === true) {
+      this.playStreamStartSound();
+      if (typeof showToast === "function") {
+        showToast("🚨 Дмитрий (TAZIK29) запустил прямой эфир! Подключайся!");
+      }
+    }
+
+    this.wasOffline = !detectedLive;
 
     if (detectedLive && liveData) {
       this.setLiveState(true, liveData);
