@@ -597,12 +597,16 @@ body {
 }
 
 .status-badge {
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: var(--rad-pill);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.8px;
+  line-height: 1;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -662,118 +666,78 @@ body {
   margin-bottom: 22px;
 }
 
+/* ================= STREAM TIME & UPTIME DASHBOARD ================= */
 .stream-stats-dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-/* Премиальный виджет зрителей онлайн */
-.live-viewers-widget {
-  background: linear-gradient(135deg, rgba(255, 51, 68, 0.12), rgba(18, 18, 24, 0.8));
-  border: 1px solid rgba(255, 51, 68, 0.4);
-  border-top: 1.5px solid rgba(255, 120, 130, 0.7);
+@media (max-width: 640px) {
+  .stream-stats-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stream-time-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--rad-md);
-  padding: 14px 18px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 10px 25px rgba(255, 51, 68, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transition: var(--transition);
 }
 
-.viewers-pulse-radar {
-  width: 44px;
-  height: 44px;
+.stream-time-card:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stream-time-icon {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: rgba(255, 51, 68, 0.2);
-  border: 1px solid rgba(255, 51, 68, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ff4d5e;
-  font-size: 1.25rem;
-  position: relative;
+  font-size: 1.3rem;
+  color: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(255, 51, 68, 0.4);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
 }
 
-.radar-circle {
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255, 51, 68, 0.6);
-  animation: pulseBeacon 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-}
-
-.viewers-counter-details {
+.stream-time-meta {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
-.viewers-count-num {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.65rem;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-}
-
-.viewers-count-label {
-  font-size: 0.76rem;
-  color: #ff99a4;
+.stream-time-title {
+  font-size: 0.74rem;
+  color: var(--text-sub);
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.8px;
 }
 
-/* Виджет времени начала и таймера эфира */
-.stream-time-widget {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--rad-md);
-  padding: 14px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
-}
-
-.time-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.86rem;
-}
-
-.time-label {
-  color: var(--text-sub);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-.time-label i {
-  color: #ffffff;
-  font-size: 0.82rem;
-}
-
-.time-val {
-  color: #ffffff;
+.stream-time-primary {
   font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
-.time-val.uptime-glow {
+.stream-time-primary.uptime-glow {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
 }
 
 .stream-offline-content {

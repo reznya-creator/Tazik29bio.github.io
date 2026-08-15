@@ -96,8 +96,8 @@
 
 .liquid-pulse-dot {
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background: radial-gradient(circle, #ff5263 30%, #ff1744 100%);
   border-radius: 50%;
   margin: 0;
