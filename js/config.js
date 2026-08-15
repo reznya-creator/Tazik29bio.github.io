@@ -210,12 +210,12 @@ const SITE_CONFIG = {
     liveUrl: "https://www.youtube.com/watch?v=EKQWWik0lhY",
     checkIntervalMs: 45000,
     demoStreamInfo: {
-      isLive: true,
-      title: "🚨🔧ПОПУКИВАЯ ДЕЛАЕМ МОД СДЕЛКА С СУДЬБОЙ 2 / БАРЕБУХО-РЫБАЛКИНА-T1NINE - ПРЕДСТАВЛЯЕТ СТРИМ🔧🚨",
+      isLive: false,
+      title: "🚨 ПРЯМОЙ ЭФИР ДМИТРИЯ (TAZIK29)",
       tags: ["#легенда", "#HALFLIFE", "#ПРОХОЖДЕНИЕ"],
-      viewers: 31,
+      viewers: 0,
       startTimeString: "20:45 МСК",
-      streamEmbedUrl: "https://www.youtube.com/embed/EKQWWik0lhY?autoplay=1"
+      streamEmbedUrl: "https://www.youtube.com/embed/live_stream?channel=UCdptt5hFGOuoZi9q1IR0Igv"
     }
   },
 

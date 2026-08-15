@@ -141,14 +141,14 @@
                 <button id="streamAudioAlertToggle" class="btn-sound-alert" title="Звуковое оповещение о старте стрима (нажмите для проверки/включения)">
                   <i class="fas fa-volume-up"></i>
                 </button>
-                <div id="streamStatusBadge" class="status-badge live">
-                  <span class="liquid-pulse-dot"></span> В ЭФИРЕ
+                <div id="streamStatusBadge" class="status-badge offline">
+                  <span class="liquid-offline-dot"></span> ОФЛАЙН
                 </div>
               </div>
             </div>
 
-            <!-- Блок онлайн -->
-            <div id="streamLiveContainer" class="stream-live-content">
+            <!-- Блок онлайн (активен только во время прямого эфира) -->
+            <div id="streamLiveContainer" class="stream-live-content" style="display: none;">
               <div class="stream-tags-list">
                 <span class="stream-tag-pill">#легенда</span>
                 <span class="stream-tag-pill">#HALFLIFE</span>
@@ -157,7 +157,7 @@
               <div id="streamStatusText" style="font-weight: 800; font-size: 0.85rem; margin-bottom: 6px; color: #ffffff; letter-spacing: 0.5px;">
                 ИДЕТ ПРЯМАЯ ТРАНСЛЯЦИЯ
               </div>
-              <h3 id="streamTitle">🚨🔧ПОПУКИВАЯ ДЕЛАЕМ МОД СДЕЛКА С СУДЬБОЙ 2 / БАРЕБУХО-РЫБАЛКИНА-T1NINE - ПРЕДСТАВЛЯЕТ СТРИМ🔧🚨</h3>
+              <h3 id="streamTitle">🚨 ПРЯМОЙ ЭФИР ДМИТРИЯ (TAZIK29)</h3>
               
               <div class="stream-stats-dashboard">
                 <!-- Карточка начала трансляции -->
@@ -178,25 +178,33 @@
                   </div>
                   <div class="stream-time-meta">
                     <span class="stream-time-title">Время в прямом эфире</span>
-                    <span class="stream-time-primary uptime-glow" id="streamTimer">04:35:12</span>
+                    <span class="stream-time-primary uptime-glow" id="streamTimer">00:00:00</span>
                   </div>
                 </div>
               </div>
 
               <div style="margin-top: 20px;">
-                <a id="streamWatchBtn" href="https://www.youtube.com/watch?v=EKQWWik0lhY" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+                <a id="streamWatchBtn" href="https://www.youtube.com/@tazik29/live" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary" style="width: 100%; justify-content: center; font-size: 1.05rem;">
                   <i class="fas fa-play"></i> Смотреть прямой эфир на YouTube
                 </a>
               </div>
             </div>
 
-            <!-- Блок офлайн -->
-            <div id="streamOfflineNotice" class="stream-offline-content" style="display: none;">
+            <!-- Блок офлайн (когда стрим завершен) -->
+            <div id="streamOfflineNotice" class="stream-offline-content" style="display: flex;">
               <div class="offline-icon-box">
                 <i class="fas fa-tv"></i>
               </div>
               <h4>Стрим сейчас не идет</h4>
-              <p>Подпишитесь на уведомления в нашей Телеге или включите колокольчик на YouTube, чтобы не пропустить следующий эфир!</p>
+              <p>Трансляция завершена. Подпишитесь на уведомления в нашей Телеге или включите колокольчик на YouTube, чтобы не пропустить следующий стрим!</p>
+              <div style="margin-top: 16px; display: flex; gap: 10px;">
+                <a href="https://t.me/+FH8pRiy8MZQwZmEy" target="_blank" rel="noopener noreferrer" class="btn-liquid-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
+                  <i class="fab fa-telegram-plane"></i> Анонсы в Telegram
+                </a>
+                <a href="https://www.youtube.com/@tazik29?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-liquid-primary" style="font-size: 0.85rem; padding: 8px 16px;">
+                  <i class="fab fa-youtube"></i> YouTube канал
+                </a>
+              </div>
             </div>
           </div>
 
