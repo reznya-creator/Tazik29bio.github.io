@@ -210,7 +210,7 @@ const SITE_CONFIG = {
       title: "🚨🔧ПОПУКИВАЯ ДЕЛАЕМ МОД СДЕЛКА С СУДЬБОЙ 2 / БАРЕБУХО-РЫБАЛКИНА-T1NINE - ПРЕДСТАВЛЯЕТ СТРИМ🔧🚨",
       tags: ["#легенда", "#HALFLIFE", "#ПРОХОЖДЕНИЕ"],
       viewers: 31,
-      startTimeString: "20:45 МСК (4 часа назад)",
+      startTimeString: "20:45 МСК",
       streamEmbedUrl: "https://www.youtube.com/embed/EKQWWik0lhY?autoplay=1"
     }
   },
