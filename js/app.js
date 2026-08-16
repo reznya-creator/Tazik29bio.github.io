@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initVideos();
   initModalPlayer();
   initSmoothScroll();
+  initScrollReveal();
 });
 
 /**
@@ -385,6 +386,10 @@ function renderVideos() {
       </div>
     </div>
   `).join("");
+  
+  if (typeof initScrollReveal === "function") {
+    initScrollReveal();
+  }
 }
 
 function setupFilterTabs() {
@@ -471,3 +476,50 @@ function initSmoothScroll() {
     });
   });
 }
+
+/**
+ * Glass Scroll Reveal: плавное появление блоков и карточек с расфокусировкой
+ */
+function initScrollReveal() {
+  const targets = document.querySelectorAll(
+    ".hero-bio-card, .hero-stream-card, .section-head, .server-card, .donation-card, .bank-card-widget, .crypto-card, .video-card, .setup-card, .social-card, .creator-credit-badge"
+  );
+
+  targets.forEach((el) => {
+    if (!el.classList.contains("reveal-on-scroll")) {
+      el.classList.add("reveal-on-scroll");
+
+      // Добавление каскадных задержек для соседних элементов в сетке
+      if (el.parentElement) {
+        const siblings = Array.from(el.parentElement.children);
+        const index = siblings.indexOf(el);
+        const delayClass = `reveal-delay-${(index % 8) + 1}`;
+        el.classList.add(delayClass);
+      }
+    }
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("is-revealed"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: "0px 0px -30px 0px"
+  });
+
+  targets.forEach(el => {
+    if (!el.classList.contains("is-revealed")) {
+      observer.observe(el);
+    }
+  });
+}
+
