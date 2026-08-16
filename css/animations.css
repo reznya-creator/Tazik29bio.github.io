@@ -119,14 +119,14 @@
   flex-shrink: 0;
 }
 
-/* ================= GLASS SCROLL REVEAL ANIMATIONS ================= */
+/* ================= GLASS SCROLL REVEAL ANIMATIONS (ДВУНАПРАВЛЕННЫЙ СКРОЛЛ) ================= */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(32px) scale(0.97);
-  filter: blur(12px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px) scale(0.98);
+  filter: blur(10px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform, filter;
 }
 
@@ -136,16 +136,21 @@
   filter: blur(0px);
 }
 
+/* Направление анимации при скролле вверх */
+body.scroll-direction-up .reveal-on-scroll:not(.is-revealed) {
+  transform: translateY(-24px) scale(0.98);
+}
+
 /* Каскадные задержки для списков и карточек */
-.reveal-delay-1 { transition-delay: 0.06s; }
-.reveal-delay-2 { transition-delay: 0.12s; }
-.reveal-delay-3 { transition-delay: 0.18s; }
-.reveal-delay-4 { transition-delay: 0.24s; }
-.reveal-delay-5 { transition-delay: 0.30s; }
-.reveal-delay-6 { transition-delay: 0.36s; }
-.reveal-delay-7 { transition-delay: 0.42s; }
-.reveal-delay-8 { transition-delay: 0.48s; }
-.reveal-delay-9 { transition-delay: 0.54s; }
+.reveal-delay-1 { transition-delay: 0.05s; }
+.reveal-delay-2 { transition-delay: 0.10s; }
+.reveal-delay-3 { transition-delay: 0.15s; }
+.reveal-delay-4 { transition-delay: 0.20s; }
+.reveal-delay-5 { transition-delay: 0.25s; }
+.reveal-delay-6 { transition-delay: 0.30s; }
+.reveal-delay-7 { transition-delay: 0.35s; }
+.reveal-delay-8 { transition-delay: 0.40s; }
+.reveal-delay-9 { transition-delay: 0.45s; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {

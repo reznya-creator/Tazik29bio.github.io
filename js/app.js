@@ -478,7 +478,7 @@ function initSmoothScroll() {
 }
 
 /**
- * Glass Scroll Reveal: плавное появление блоков и карточек с расфокусировкой
+ * Glass Scroll Reveal: двунаправленная анимация появления блоков при скролле вниз и вверх
  */
 function initScrollReveal() {
   const targets = document.querySelectorAll(
@@ -499,27 +499,46 @@ function initScrollReveal() {
     }
   });
 
+  // Отслеживание направления скролла страницы (вниз / вверх)
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY < lastScrollY) {
+      document.body.classList.add("scroll-direction-up");
+      document.body.classList.remove("scroll-direction-down");
+    } else {
+      document.body.classList.add("scroll-direction-down");
+      document.body.classList.remove("scroll-direction-up");
+    }
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
   if (!("IntersectionObserver" in window)) {
     targets.forEach(el => el.classList.add("is-revealed"));
     return;
   }
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-revealed");
-        obs.unobserve(entry.target);
+      } else {
+        // Когда блок полностью уходит из видимой области (сверху или снизу),
+        // сбрасываем класс, чтобы при обратном скролле он снова мягко проявился
+        const rect = entry.boundingClientRect;
+        if (rect.top > window.innerHeight || rect.bottom < 0) {
+          entry.target.classList.remove("is-revealed");
+        }
       }
     });
   }, {
     threshold: 0.08,
-    rootMargin: "0px 0px -30px 0px"
+    rootMargin: "20px 0px 20px 0px"
   });
 
   targets.forEach(el => {
-    if (!el.classList.contains("is-revealed")) {
-      observer.observe(el);
-    }
+    observer.observe(el);
   });
 }
+
 
